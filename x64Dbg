@@ -1,0 +1,35 @@
+General Commands:
+--------------
+help [-v] [command]           # Show help for a specific command (optionally, use -v for verbose output)
+info [-a|-m|-r|-s|-t|-w]      # Show information about the current state of the debugger (use the following options to specify what information to show: -a for all information, -m for memory map, -r for registers, -s for sections, -t for threads, -w for windows)
+quit                          # Quit x64dbg
+
+Breakpoints:
+-------------
+bp [-a|-h|-t <id>] <address> # Set a breakpoint at a specified address (use the following options to specify what type of breakpoint to set: -a for access breakpoint, -h for hardware breakpoint, -t <id> for thread-specific breakpoint)
+bpm [-a|-h|-l <size>] <address> <size> # Set a memory breakpoint at a specified address (use the following options to specify what type of memory breakpoint to set: -a for access breakpoint, -h for hardware breakpoint, -l <size> for length of the memory region to monitor)
+bpa [-a|-w] <address>        # Set an access breakpoint at a specified address (use the following options to specify what type of access breakpoint to set: -a for read/write access, -w for write access only)
+bph [-a|-e] <address>        # Set a hardware breakpoint at a specified address (use the following options to specify what type of hardware breakpoint to set: -a for access breakpoint, -e for execution breakpoint)
+bc [-a|-h] <address>         # Clear a breakpoint at a specified address (use the following options to specify what type of breakpoint to clear: -a for access breakpoint, -h for hardware breakpoint)
+bl [-a|-h|-t]                # List all active breakpoints (use the following options to specify what type of breakpoints to list: -a for access breakpoints, -h for hardware breakpoints, -t for thread-specific breakpoints)
+bpv <expression>             # Set a breakpoint on a specified expression (e.g., module name, function name)
+
+Execution:
+-----------
+run [-c <command>]           # Run the target process (optionally, use -c to run the specified command before starting the process)
+step [-i]                     # Step over the next instruction (use -i to step into a call)
+stepinto [-i]                # Step into the next instruction (use -i to step into a call)
+stepout                       # Step out of the current function
+pause                         # Pause the execution of the target process
+stop                          # Stop the execution of the target process
+
+Registers:
+-----------
+r [reg]                       # Display the current values of all registers (optionally, specify a register to display its value)
+r <reg> <value>               # Set the value of a specific register
+
+Memory:
+--------
+d [-b|-c|-d|-h|-m|-p|-q|-w] [-s <size>] <address> # Display memory at a specified address (use the following options to specify how to display memory: -b for byte, -c for character, -d for doubleword, -h for halfword, -m for qword, -p for pointer, -q for quadword, -w for word; use -s to specify the number of bytes to display)
+du [-s <size>] <address>      # Display memory as ASCII at a specified address (use -s to specify the number of bytes to display)
+e [-a|-b|-
